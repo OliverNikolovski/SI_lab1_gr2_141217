@@ -2,16 +2,53 @@ class Student {
 	String index;
 	String firstName;
 	String lastName;
+	int[] ocenki;
 
-	//TODO constructor
+	public Student(String index, String firstName, String lastName, int[] ocenki) {
+		this.index = index;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.ocenki = ocenki;
+	}
 
-	//TODO seters & getters
+	public String getIndex() {
+		return index;
+	}
+
+	public void setIndex(String index) {
+		this.index = index;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
 	public double getAverage() {
-		//TODO
+		double sum = 0.0;
+		for (int i = 0; i < ocenki.length; i++) {
+			sum += ocenki[i];
+		}
+		return sum / ocenki.length;
 	}
 
 	public int ECTSCredits() {
-		//TODO
+		int krediti = 0;
+		for (int i = 0; i < ocenki.length; i++) {
+			if (ocenki[i] > 5)
+				krediti += 6;
+		}
+		return krediti;
 	}
 }
