@@ -52,3 +52,17 @@ class Student {
 		return krediti;
 	}
 }
+
+class Faculty {
+	List<Student> students = new ArrayList<>();
+	String facultyName = "";
+
+	public Faculty(List<Student> students, String facultyName) {
+		this.students = students;
+		this.facultyName = facultyName;
+	}
+
+	public void addStudents(Student student) {
+		this.students.add(student);
+	}
+}
